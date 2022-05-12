@@ -1,21 +1,28 @@
-using DocService.Models.Data;
+using DocService.Models.Data.Identity;
 using DocService.Repositories.Interfaces;
 using DocService.Repositories.Repos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using DocService.Utilities;
+using DocService.Models.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<IdentityAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Database"));
 });
 
+//Identity Database Context
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<AppDbContext>()
+    .AddEntityFrameworkStores<IdentityAppDbContext>()
     .AddDefaultTokenProviders();;
-    
+
+//Normal Database Context
+builder.Services.AddDbContext<AppDbContext>(
+    options=>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Database")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

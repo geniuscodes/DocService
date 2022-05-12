@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DocService.Models.Data
 {
-    public class AppDbContext : IdentityDbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -13,7 +13,9 @@ namespace DocService.Models.Data
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Prescription> Prescriptions { get; set; }
-        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<Nurse> Nurses { get; set; }
+        public DbSet<LineManger> LineManagers { get; set; }
+
         
         
     }

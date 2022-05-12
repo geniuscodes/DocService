@@ -3,6 +3,7 @@ using DocService.Models.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DocService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220512112608_Employee")]
+    partial class Employee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,7 +100,10 @@ namespace DocService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LineManagerId")
+                    b.Property<int>("ManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MangerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Role")
@@ -107,7 +112,7 @@ namespace DocService.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LineManagerId");
+                    b.HasIndex("MangerId");
 
                     b.ToTable("Nurses");
                 });
@@ -143,13 +148,13 @@ namespace DocService.Migrations
 
             modelBuilder.Entity("DocService.Models.Entities.Nurse", b =>
                 {
-                    b.HasOne("DocService.Models.Entities.LineManger", "LineManager")
+                    b.HasOne("DocService.Models.Entities.LineManger", "Manger")
                         .WithMany()
-                        .HasForeignKey("LineManagerId")
+                        .HasForeignKey("MangerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("LineManager");
+                    b.Navigation("Manger");
                 });
 
             modelBuilder.Entity("DocService.Models.Entities.Prescription", b =>
