@@ -141,6 +141,7 @@ namespace DocService.Controllers
             await _doctors.DeleteDoctor(id);
             await Task.Run(_doctors.SaveDatabase);
             _doctors.SaveDatabase();
+            //
             return RedirectToAction(nameof(Index));
         }
 
