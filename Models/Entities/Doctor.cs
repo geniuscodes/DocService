@@ -10,6 +10,8 @@ namespace DocService.Models.Entities
         [Key]
         public int Id { get; set; }
         [Required]
+#nullable disable
+
         public string FirstName { get; set; }
         [Required]
 

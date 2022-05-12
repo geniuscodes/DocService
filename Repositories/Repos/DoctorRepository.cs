@@ -31,7 +31,7 @@ namespace DocService.Repositories.Repos
 
         public async Task<Doctor> CheckDoc(int id)
         {
-            var doc = _database.Doctors.FirstOrDefault(x => x.Id == id);
+            var doc = await _database.Doctors.FirstOrDefaultAsync(x => x.Id == id);
             if (doc == null)
             {
                 return null;
@@ -44,7 +44,7 @@ namespace DocService.Repositories.Repos
         public async Task<Doctor> DeleteDoctor(int id)
         {
             // await CheckDoc(id);
-            var doc = _database.Doctors.FirstOrDefault(x => x.Id == id);
+            var doc = await _database.Doctors.FirstOrDefaultAsync(x => x.Id == id);
             if (doc != null)
             {
                 _database.Doctors.Remove(doc);

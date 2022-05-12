@@ -10,6 +10,7 @@ namespace DocService.Models.Entities
         [Key]
         [Required]
         public int Id { get; set; }
+        #nullable disable
 
         [Required]
         [MaxLength(100)]
