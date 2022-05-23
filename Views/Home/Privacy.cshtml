@@ -1,39 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Starter";
 }
-<h1>@ViewData["Title"]</h1>
 
-
-
-<p>Use this page to detail your site's privacy policy.</p>
-<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-a681b36 elementor-widget elementor-widget-text-editor" data-id="a681b36" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-							<h3><span style="color: #262164;">Join The 404 Team: Where All your vacancies are FOUND</span></h3><p><span style="color: #262164;"><strong>We offer you the opportunity to join a growing organisation. </strong></span></p>						</div>
-							<h3><span style="color: #262164;"> </span></h3><p><span style="color: #262164;"><strong>We offer you the opportunity to join a growing organisation. </strong></span></p>						</div>
-				</div>
-				<div class="elementor-element elementor-element-a491fde elementor-widget elementor-widget-mkdf_button" data-id="a491fde" data-element_type="widget" data-widget_type="mkdf_button.default">
-				<div class="elementor-widget-container">
-			<a itemprop="url" href="https://localhost:7227/Home/" target="_self" style="color: #FFFFFF;background-color: #E0E0E0" class="mkdf-btn mkdf-btn-large mkdf-btn-solid mkdf-btn-solid-dark mkdf-btn-custom-hover-bg mkdf-btn-custom-hover-color mkdf-btn-icon" data-hover-color="#F4F4F4" data-hover-bg-color="#262262" 0="color: #FFFFFF" 1="background-color: #E0E0E0">
-    <span class=" btn btn-danger">Apply Now</span>
-    <span class="mkdf-btn-icon-holder">
-        <span class="mkdf-btn-icon-normal" style="background-color: #ED1B24"><span aria-hidden="true" class="mkdf-icon-font-elegant arrow_carrot-right "></span></span>
-        <span class="mkdf-btn-icon-flip" style="background-color: #ED1B24"><span aria-hidden="true" class="mkdf-icon-font-elegant arrow_carrot-right "></span></span>
-    </span>
-</a>		</div>
-				</div>
-					</div>
-
-
-                    <div class="mkdf-icon-box-holder-inner" style="padding:55px 23%">
-                    <div class="mkdf-custom-icon-holder">
-                <div class="mkdf-custom-icon">
-                    <img src="https://static.vecteezy.com/system/resources/previews/001/193/981/original/ambulance-png.png" alt="Custom icon" style="width:65px;height:77px;">
-                </div>
-            </div>
-                <div class="mkdf-icon-box-text-holder">
-                            <div class="mkdf-icon-box-title">
-                    <h5>Ambulance</h5>
-                </div>
-                                </div>
-    </div>
+<div class="content-header">
+    @await Html.PartialAsync("_Index.Header.cshtml")
+</div>
+<div class="content">
+    @await Html.PartialAsync("_Index.Content.cshtml")
+</div>

@@ -17,15 +17,21 @@ namespace DocService.Repositories.Interfaces
         //GetAllNurses
         Task<IEnumerable<Nurse>> GetAllNurses();
         //GetANurse
-        Task<IEnumerable<Nurse>> GetANurse(int id);
+       Task<Nurse> GetANurse(int id);
 
         //UpdateNurseInformation
         Task<Nurse> UpdateProfile (Nurse nurse);   
         //DeleteNurse
         Task<Nurse> DeleteNurse(Nurse nurse);
+        Task SaveDatabase();
         //Check The Nurse
         //Status 
         //Nurse can Update Shift 
+        //Search by Name Method
+        Task<IEnumerable<Nurse>> SearchByName(string name);
+
+
+        //Search by Department
 
     }
 }

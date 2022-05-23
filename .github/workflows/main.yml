@@ -1,0 +1,35 @@
+
+name: DocService CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
+#set environment variables 
+env:
+  HEROKU_API_KEY: 335965d0-4b3a-4934-afa5-09c9afce3ac6
+  APP_NAME: docservicemvc
+
+jobs:
+      
+  deploy:
+    name: Deploy to Heroku
+    runs-on: windows-latest
+    steps:
+
+    # Clone the repository
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Build Docker image
+    - name: Docker build
+      run: docker login --username=youngdev099 --password=335965d0-4b3a-4934-afa5-09c9afce3ac6 registry.heroku.com
+
+    # Push the Docker image to Heroku Container Registry
+    - name: Publish
+      run: |
+        heroku container:push web -a docservicemvc
+        heroku container:release web -a docservicemvc
+

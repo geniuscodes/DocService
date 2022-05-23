@@ -29,7 +29,7 @@ namespace DocService.Controllers
             _doctors = doctor;
         }
 
-        [Authorize(Roles = StaticRoles.Doctor + "," + StaticRoles.Management)]
+        // [Authorize(Roles = StaticRoles.Doctor + "," + StaticRoles.Management)]
         public  async Task<ActionResult> Index()
         {
 
@@ -48,13 +48,13 @@ namespace DocService.Controllers
 
         }
         //Create
-        [Authorize(Roles = StaticRoles.Management)]
+        // [Authorize(Roles = StaticRoles.Management)]
 
         public IActionResult Create()
         {
             return View();
         }
-        [Authorize(Roles = StaticRoles.Management)]
+        // [Authorize(Roles = StaticRoles.Management)]
         [HttpPost]
         public async Task<IActionResult> Create([Bind
         ("Id,FirstName,LastName,Telephone,EmailAddress,Speciality,Address,RegNumber")]

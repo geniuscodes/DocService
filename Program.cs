@@ -33,6 +33,7 @@ builder.Services.AddRazorPages();
 //Add Repository
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<INurseRepository, NurseRepository>();
+builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 
 //AddMapper
 

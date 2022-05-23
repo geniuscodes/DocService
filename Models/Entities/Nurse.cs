@@ -1,11 +1,14 @@
 using System;
+using DocService.Models.Entities.Departments;
 
 namespace DocService.Models.Entities
 {
     public class Nurse : Employee
     {
         //Department
-        //Prescription / Patieances1
+        public Medicine deployed { get; set; }
+        public int Medicineid { get; set; }
+        
         
         
     }

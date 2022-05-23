@@ -22,6 +22,57 @@ namespace DocService.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("DocService.Models.Entities.Departments.Digital", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LineManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LineManagerId");
+
+                    b.ToTable("Digital");
+                });
+
+            modelBuilder.Entity("DocService.Models.Entities.Departments.Medicine", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("MedicineDept");
+                });
+
             modelBuilder.Entity("DocService.Models.Entities.Doctor", b =>
                 {
                     b.Property<int>("Id")
@@ -45,6 +96,9 @@ namespace DocService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Medicineid")
+                        .HasColumnType("int");
+
                     b.Property<int>("RegNumber")
                         .HasColumnType("int");
 
@@ -56,6 +110,8 @@ namespace DocService.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Medicineid");
 
                     b.ToTable("Doctors");
                 });
@@ -109,7 +165,10 @@ namespace DocService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("LineManagerId")
+                    b.Property<int>("LineManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Medicineid")
                         .HasColumnType("int");
 
                     b.Property<string>("Role")
@@ -120,7 +179,62 @@ namespace DocService.Migrations
 
                     b.HasIndex("LineManagerId");
 
+                    b.HasIndex("Medicineid");
+
                     b.ToTable("Nurses");
+                });
+
+            modelBuilder.Entity("DocService.Models.Entities.Patient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Agreement")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BloodType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Phone")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("DocService.Models.Entities.Prescription", b =>
@@ -152,13 +266,41 @@ namespace DocService.Migrations
                     b.ToTable("Prescriptions");
                 });
 
+            modelBuilder.Entity("DocService.Models.Entities.Departments.Digital", b =>
+                {
+                    b.HasOne("DocService.Models.Entities.LineManger", "LineManager")
+                        .WithMany()
+                        .HasForeignKey("LineManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LineManager");
+                });
+
+            modelBuilder.Entity("DocService.Models.Entities.Doctor", b =>
+                {
+                    b.HasOne("DocService.Models.Entities.Departments.Medicine", null)
+                        .WithMany("Doctors")
+                        .HasForeignKey("Medicineid");
+                });
+
             modelBuilder.Entity("DocService.Models.Entities.Nurse", b =>
                 {
                     b.HasOne("DocService.Models.Entities.LineManger", "LineManager")
                         .WithMany()
-                        .HasForeignKey("LineManagerId");
+                        .HasForeignKey("LineManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DocService.Models.Entities.Departments.Medicine", "deployed")
+                        .WithMany("Nurses")
+                        .HasForeignKey("Medicineid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("LineManager");
+
+                    b.Navigation("deployed");
                 });
 
             modelBuilder.Entity("DocService.Models.Entities.Prescription", b =>
@@ -170,6 +312,13 @@ namespace DocService.Migrations
                         .IsRequired();
 
                     b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("DocService.Models.Entities.Departments.Medicine", b =>
+                {
+                    b.Navigation("Doctors");
+
+                    b.Navigation("Nurses");
                 });
 
             modelBuilder.Entity("DocService.Models.Entities.Doctor", b =>

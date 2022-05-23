@@ -2,6 +2,7 @@ using System;
 using DocService.Models.Data;
 using DocService.Models.Entities;
 using DocService.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace DocService.Repositories.Repos
 {
@@ -26,22 +27,49 @@ namespace DocService.Repositories.Repos
 
         public Task<Nurse> DeleteNurse(Nurse nurse)
         {
-            throw new NotImplementedException();
+            
+            // NURSERY
+            var nurseToDelete = _database.Nurses.FirstOrDefault(n => n.Id == nurse.Id);
+            _database.Nurses.Remove(nurseToDelete);
+            Task.Run(() => _database.SaveChangesAsync());
+            return Task.FromResult(nurseToDelete);
+
         }
 
-        public Task<IEnumerable<Nurse>> GetAllNurses()
+        public async Task<IEnumerable<Nurse>> GetAllNurses()
         {
-            throw new NotImplementedException();
+           var results = _database.Nurses
+           .ToList();
+              return  results;
+                  
         }
 
-        public Task<IEnumerable<Nurse>> GetANurse(int id)
+        public  Task<Nurse> GetANurse(int id)
         {
-            throw new NotImplementedException();
+            var nurse = _database.Nurses
+            .FirstOrDefault(n=>n.Id == id);
+            return Task.FromResult(nurse);
+        }
+
+        public  Task SaveDatabase()
+        {
+            return _database.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Nurse>> SearchByName(string name)
+        {
+            var nurses = _database.Nurses
+            .Where(n => n.FirstName.Contains(name))
+            .ToList();
+            return nurses;
         }
 
         public Task<Nurse> UpdateProfile(Nurse nurse)
         {
-            throw new NotImplementedException();
+            var nurseToUpdate = _database.Nurses.FirstOrDefault(n => n.Id == nurse.Id);
+          _database.Nurses.Update(nurseToUpdate);
+            Task.Run(() => _database.SaveChangesAsync());
+            return Task.FromResult(nurseToUpdate);
         }
     }
 }

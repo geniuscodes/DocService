@@ -558,3 +558,6 @@ C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\Microsoft.Ex
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\package-lock.json
+C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\package.json
+C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\libman.json

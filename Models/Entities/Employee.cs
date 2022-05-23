@@ -11,6 +11,8 @@ namespace DocService.Models.Entities
         #nullable disable
 
         public LineManger LineManager { get; set; }
+        public int LineManagerId { get; set; }
+
 
     }
 }
