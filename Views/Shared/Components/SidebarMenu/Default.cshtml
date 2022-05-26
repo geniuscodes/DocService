@@ -1,38 +1,71 @@
-﻿<nav class="mt-2">
+﻿
+
+<body>
+<nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library -->
+       
         <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                   Appointments
+
+               
+      
+
+                <p  style="text-align: center; color: black; font-size:25px; font-weight: bold; margin-left: -50px;   "> 
+                    Clinic
                     <i class="right fas fa-angle-left"></i>
-                </p>
+                <p>
             </a>
+
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="https://localhost:7227/Nurse/" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Patient Info</p>
+                        <p>PatientInfo</p>
+                    </a>
+                </li>
+              
+                <li class="nav-item">
+                    <a href="https://localhost:7227/Nurse/NurseAppointment" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Appointments</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="https://localhost:7227/Nurse/NursePrescription" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Medication</p>
+                        <p> Prescriptions</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="https://localhost:7227/Nurse/NurseMedicine" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Meidications</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://localhost:7227/Nurse/NurseReport" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Nurse Report</p>
+                    </a>
+                </li>
+              
             </ul>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                    Simple Link
-                    <span class="right badge badge-danger">New</span>
-                </p>
-            </a>
         </li>
     </ul>
 </nav>
+
+
+
+
+
+ 
+
+  <script>
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.nav');
+    var instances = M.Dropdown.init(elems, options);
+  });
+
+  </script>
+
+</body>
+  </html>

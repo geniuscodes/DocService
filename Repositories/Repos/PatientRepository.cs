@@ -28,27 +28,18 @@ namespace DocService.Repositories.Repos
         public  IEnumerable<Patient> GetAllPatients()
         {
            //
-           var pataients = (from patrons in _database.Patients
-                           select new Patient
-                           {
-                               Id = patrons.Id,
-                               FirsName = patrons.FirsName,
-                               LastName = patrons.LastName,
-                               Gender = patrons.Gender,
-                               BloodType = patrons.BloodType,
-                               DateOfBirth = patrons.DateOfBirth,
-                               PatientCode = patrons.PatientCode,
-                               Agreement = patrons.Agreement
-
-
-
-                           }).ToList();
-                    return pataients;
+           var pataients = _database.Patients.ToList();
+                    return pataients.ToList();
         }
 
         public Task<Patient> GetAPatient(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public void SaveDatabase()
+        {
+          _database.SaveChangesAsync();
         }
 
         public Task<IEnumerable<Patient>> SearchByName(string name)

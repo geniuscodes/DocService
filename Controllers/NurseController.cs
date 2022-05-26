@@ -26,23 +26,29 @@ namespace DocService.Controllers
 /// Prescriptions Patients Checkups and So On 
 /// </summary>
 /// <returns></returns>
-        public IActionResult Index()
+        public class PatientViewModel 
         {
-             {
-                var docs = _pataients.GetAllPatients();
-                return View(docs);
-            }
+            public Patient Patient { get; set; }
+            public IEnumerable<Patient?> Patients { get; set; }
         }
 
+       public async Task<IActionResult> Index()
+        {
+            // return View(await _context.Doctors.ToListAsync());
+            PatientViewModel pvm = new PatientViewModel();
+            pvm.Patient = new Patient();
+            pvm.Patients =  _pataients.GetAllPatients();
+            return View(pvm);
+        }
 
 // GET
   public IActionResult NewPatient()
         {
-            return View();
+            return View("NewPatient");
         }
         [HttpPost]
         public async Task<IActionResult> NewPatient([Bind
-        ("Id,FirsName,LastName,PatientCode,Gender,BlodType,DateOfBirth,Phone,EmailAddress,Address")]
+        ("Id,FirsName,LastName,PatientCode,Gender,BloodType,DateOfBirth,Phone,EmailAddress, Address, Agreement")]
          Patient patiet)
         {
 

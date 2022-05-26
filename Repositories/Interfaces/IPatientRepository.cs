@@ -28,6 +28,6 @@ namespace DocService.Repositories.Interfaces
 
         // SearchByName
         Task<IEnumerable<Patient>> SearchByName(string name);
-
+        void SaveDatabase();
     }
 }
