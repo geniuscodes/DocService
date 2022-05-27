@@ -563,3 +563,5 @@ C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\package.json
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\libman.json
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\DocService.xml
+C:\Users\nduduzok\Documents\Development\DocService\obj\Debug\net6.0\DocService.xml

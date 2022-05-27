@@ -147,16 +147,12 @@ namespace DocService.Controllers
         public Task<ActionResult<AppointmentReadDTO>> AddAppointment(AppointmentReadDTO appointment)
         {
         
-
-
             Task.Run(async () =>
            {
                var newAppointment = await _appointments.AddAppointment(appointment);
                return Ok(newAppointment);
 
            });
-
-
 
             return null;
 

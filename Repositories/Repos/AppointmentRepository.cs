@@ -54,7 +54,7 @@ namespace DocService.Repositories.Repos
                                AppointmentTime = appointments.NextVisitDate.ToString("HH:mm tt"),
                               
                               }).SingleOrDefaultAsync(); 
-                             return  (appointment.Result);
+                             return  appointment.Result;
  
                 
         }

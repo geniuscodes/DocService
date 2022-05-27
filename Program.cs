@@ -9,7 +9,7 @@ using DocService.Models.Data;
 using DocService.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<IdentityAppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Database"));
@@ -52,14 +52,21 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+    app.UseSwagger();
+    app.UseSwaggerUI();
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-}
-app.UseSwagger();
-
-app.UseSwaggerUI(c =>
+    app.UseSwaggerUI(options =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Testing");
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
+});
+
+}
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
 });
 app.UseHttpsRedirection();
 app.UseStaticFiles();
