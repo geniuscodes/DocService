@@ -20,7 +20,7 @@ namespace DocService.Models.Entities
 
         public DateTime NextVisitDate { get; set; } 
 
-        public string Advice { get; set; }
+        public string Advice { get; set; } //for the patient
 
         //previous file
 
@@ -28,9 +28,12 @@ namespace DocService.Models.Entities
 
         //Relational Tables
         public Doctor doctor { get; set; }
+        public int doctorId { get; set; }
 
         public Patient Patient { get; set; }
+        public int PatientId { get; set; }
         //Created By A Logged in User
+
 
         private int value = 100;
 

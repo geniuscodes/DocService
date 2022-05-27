@@ -1,4 +1,7 @@
 using System;
+using System.Diagnostics;
+using AutoMapper;
+using DocService.Models.DTO;
 using DocService.Models.Entities;
 using DocService.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -7,42 +10,48 @@ namespace DocService.Controllers
 {
     public class NurseController : Controller
     {
-        
+
         //Nurse Repository
         private readonly INurseRepository _nurses;
         private readonly IDoctorRepository _doctors;
         private readonly IPatientRepository _pataients;
+        private readonly IAppointmentRepository _appointments;
+        private readonly IMapper _mapper;
 
         //Nurse
         public NurseController(INurseRepository nurses,
-        IDoctorRepository doctors,IPatientRepository pataients)
+        IDoctorRepository doctors, IPatientRepository pataients,
+        IAppointmentRepository appointments, IMapper mapper
+        )
         {
             _nurses = nurses;
             _doctors = doctors;
             _pataients = pataients;
+            _appointments = appointments;
+            _mapper = mapper;
         }
-/// <summary>
-/// The controller will be responsible for   nurse  to manage the 
-/// Prescriptions Patients Checkups and So On 
-/// </summary>
-/// <returns></returns>
-        public class PatientViewModel 
+        /// <summary>
+        /// The controller will be responsible for   nurse  to manage the 
+        /// Prescriptions Patients Checkups and So On 
+        /// </summary>
+        /// <returns></returns>
+        public class PatientViewModel
         {
             public Patient Patient { get; set; }
             public IEnumerable<Patient?> Patients { get; set; }
         }
 
-       public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             // return View(await _context.Doctors.ToListAsync());
             PatientViewModel pvm = new PatientViewModel();
             pvm.Patient = new Patient();
-            pvm.Patients =  _pataients.GetAllPatients();
+            pvm.Patients = _pataients.GetAllPatients();
             return View(pvm);
         }
 
-// GET
-  public IActionResult NewPatient()
+        // GET
+        public IActionResult NewPatient()
         {
             return View("NewPatient");
         }
@@ -61,12 +70,12 @@ namespace DocService.Controllers
         //Edit
 
 
-//////////////////////////////////!!For Tesing Func //////////////////////////////////
+        //////////////////////////////////!!For Tesing Func //////////////////////////////////
 
         //Index
         [HttpGet]
         [Route("nurse/all")]
-        public  ActionResult<IEnumerable<Nurse>> Nurses()
+        public ActionResult<IEnumerable<Nurse>> Nurses()
         {
             var nurses = _nurses.GetAllNurses();
             return Ok(nurses);
@@ -84,7 +93,7 @@ namespace DocService.Controllers
         //Removecc
         [HttpDelete]
         [Route("nurse/delete/{id}")]
-        public async Task<ActionResult<Nurse>> DeleteNurse(int id, Nurse  n)
+        public async Task<ActionResult<Nurse>> DeleteNurse(int id, Nurse n)
         {
             var nurse = _nurses.GetANurse(id);
             switch (nurse)
@@ -92,19 +101,19 @@ namespace DocService.Controllers
                 case null:
                     return NotFound();
                 default:
-                 await Task.Run(() =>
-                   _nurses.DeleteNurse(nurse.Result)
-                 .ContinueWith(
-                     t =>  _nurses.SaveDatabase()));
+                    await Task.Run(() =>
+                      _nurses.DeleteNurse(nurse.Result)
+                    .ContinueWith(
+                        t => _nurses.SaveDatabase()));
                     return Ok(nurse.Result);
             }
-          
+
         }
 
         //SearchByName
         [HttpGet]
         [Route("nurse/search/{name}")]
-        
+
         public async Task<ActionResult<IEnumerable<Nurse>>> SearchByName(string name)
         {
             var nurses = _nurses.SearchByName(name);
@@ -112,6 +121,46 @@ namespace DocService.Controllers
 
         }
 
-       
+
+        //Manage Apppointments
+
+        [HttpGet]
+        [Route("nurse/appointments")]
+        public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetAllApointments()
+        {
+
+            var allApp = await _appointments.GetAppointments();
+            return Ok(allApp);
+
+        }
+
+        [HttpGet]
+        [Route("nurse/appointments/{id}")]
+        public async Task<ActionResult<AppointmentReadDTO>> GetAppointmentById(int id)
+        {
+            var app = await _appointments.GetAppointment(id);
+            return Ok((app));
+        }
+
+        [HttpPost]
+        [Route("nurse/appointments")]
+        public Task<ActionResult<AppointmentReadDTO>> AddAppointment(AppointmentReadDTO appointment)
+        {
+        
+
+
+            Task.Run(async () =>
+           {
+               var newAppointment = await _appointments.AddAppointment(appointment);
+               return Ok(newAppointment);
+
+           });
+
+
+
+            return null;
+
+        }
+
     }
 }

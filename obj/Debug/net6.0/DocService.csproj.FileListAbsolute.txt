@@ -561,3 +561,5 @@ C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\Microsoft.As
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\package-lock.json
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\package.json
 C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\libman.json
+C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\nduduzok\Documents\Development\DocService\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
