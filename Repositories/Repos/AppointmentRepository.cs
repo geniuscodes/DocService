@@ -21,15 +21,32 @@ namespace DocService.Repositories.Repos
         }
      
 
-        public  Task<AppointmentReadDTO> AddAppointment(AppointmentReadDTO appointment)
+        public  Task<AppointmentCreateDTO> AddAppointment(AppointmentCreateDTO appointment)
         {
-            var app = _mapper.Map<AppointmentReadDTO, Appointment>(appointment);
+
+            var app = _mapper.Map<AppointmentCreateDTO, Appointment>(appointment);
             var newAppointment = _database.Appointments.Add(app);
-             var newAppoint = _mapper.Map<Appointment, AppointmentReadDTO>(newAppointment.Entity);
-             _database.SaveChangesAsync();
+             var newAppoint = _mapper.Map<Appointment, AppointmentCreateDTO>(newAppointment.Entity);
+           
+            _database.SaveChanges();
             return Task.FromResult(newAppoint);
         }
-       
+
+        public Task<AppointmentReadDTO> AppointmentDetails(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AppointmentReadDTO> DeleteAppointment(AppointmentReadDTO appoint)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<AppointmentReadDTO> EditAppointment(AppointmentReadDTO appointment)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<AppointmentReadDTO> GetAppointment(int id)
         {
 
@@ -48,7 +65,7 @@ namespace DocService.Repositories.Repos
                            {
                                PatientName = patients.FirsName + " " + patients.LastName,
                                DoctorName = doctors.FirstName,
-                               SerialNumber = appointments.SeralNumber,
+                           
                                Notes = appointments.Comment,
                                AppointmentDate = appointments.NextVisitDate,
                                AppointmentTime = appointments.NextVisitDate.ToString("HH:mm tt"),
@@ -74,7 +91,6 @@ namespace DocService.Repositories.Repos
                            {
                                PatientName = patients.FirsName + " " + patients.LastName,
                                DoctorName = doctors.FirstName,
-                               SerialNumber = appointments.SeralNumber,
                                Notes = appointments.Comment,
                                AppointmentDate = appointments.NextVisitDate,
                                AppointmentTime = appointments.NextVisitDate.ToString("HH:mm tt"),

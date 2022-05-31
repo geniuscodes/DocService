@@ -66,3 +66,4 @@ VALUES('P2021425',
 GO
 
 
+SELECT * FROM Patients;

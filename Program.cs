@@ -54,13 +54,6 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseSwagger();
     app.UseSwaggerUI();
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-    app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
-});
 
 }
 app.UseSwaggerUI(options =>
@@ -70,7 +63,8 @@ app.UseSwaggerUI(options =>
 });
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseRouting();
 app.UseAuthentication();;
 

@@ -13,12 +13,12 @@ namespace DocService.Models.Entities
 
         public string PatientType { get; set; }
 
-        public static DateTime AppointmentDate { get; set; } 
+        public static DateTime AppointmentDate { get; set; }
 
         public string AppointmentTime { get; set; } = AppointmentDate.ToString("hh:mm");
 
 
-        public DateTime NextVisitDate { get; set; } 
+        public DateTime NextVisitDate { get; set; }
 
         public string Advice { get; set; } //for the patient
 
@@ -35,28 +35,24 @@ namespace DocService.Models.Entities
         //Created By A Logged in User
 
 
-        private int value = 100;
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        //[MinLength(5)]
+        //public int SerialNumber
+        //{
+        //    get; set;
 
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        [MinLength(5)]
-        public int SeralNumber
-        {
-            get
-            {
-                return value;
-            }
-            set
-            {
 
-                for (int i = value; i < int.MaxValue; i++)
-                    value = i;
-            }
-        }
+        //}
 
-    public DateTime CreatedDate{get; set;} = (DateTime.Today);
+
+
+        public DateTime CreatedDate { get; set; } = (DateTime.Today);
+
+        //Add The Satuus codes as our Internal Tracking of 
 
 
     }
 }
+
 

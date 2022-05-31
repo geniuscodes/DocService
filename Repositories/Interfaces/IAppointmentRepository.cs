@@ -7,7 +7,7 @@ namespace DocService.Repositories.Interfaces
     public interface IAppointmentRepository
     {
         //Add Appointment
-        Task<AppointmentReadDTO> AddAppointment(AppointmentReadDTO appointment);
+        Task<AppointmentCreateDTO> AddAppointment(AppointmentCreateDTO appointment);
         //Display Appointments
         Task<IEnumerable<AppointmentReadDTO>> GetAppointments();
 
@@ -17,5 +17,18 @@ namespace DocService.Repositories.Interfaces
         //Search Appointments
 
         IEnumerable<Appointment> SearchAppointments(string appointment);
+
+        //Edit Appoint
+
+        Task<AppointmentReadDTO> EditAppointment(AppointmentReadDTO appointment);
+
+        //Delete
+        Task<AppointmentReadDTO> DeleteAppointment(AppointmentReadDTO appoint);
+
+        //Details
+
+        Task<AppointmentReadDTO> AppointmentDetails(int id);
+
+        
     }
 }

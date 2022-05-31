@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using AutoMapper;
+using DocService.Models.Data;
 using DocService.Models.DTO;
 using DocService.Models.Entities;
 using DocService.Repositories.Interfaces;
@@ -17,11 +18,13 @@ namespace DocService.Controllers
         private readonly IPatientRepository _pataients;
         private readonly IAppointmentRepository _appointments;
         private readonly IMapper _mapper;
+        private readonly AppDbContext _database;
 
         //Nurse
         public NurseController(INurseRepository nurses,
         IDoctorRepository doctors, IPatientRepository pataients,
-        IAppointmentRepository appointments, IMapper mapper
+        IAppointmentRepository appointments, IMapper mapper,
+        AppDbContext database
         )
         {
             _nurses = nurses;
@@ -29,6 +32,7 @@ namespace DocService.Controllers
             _pataients = pataients;
             _appointments = appointments;
             _mapper = mapper;
+            _database = database;
         }
         /// <summary>
         /// The controller will be responsible for   nurse  to manage the 
@@ -129,8 +133,10 @@ namespace DocService.Controllers
         public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetAllApointments()
         {
 
-            var allApp = await _appointments.GetAppointments();
-            return Ok(allApp);
+            //var allApp = await _appointments.GetAppointments();
+            //return Ok(allApp);
+
+            return View("Appointments");
 
         }
 
@@ -144,17 +150,12 @@ namespace DocService.Controllers
 
         [HttpPost]
         [Route("nurse/appointments")]
-        public Task<ActionResult<AppointmentReadDTO>> AddAppointment(AppointmentReadDTO appointment)
+        public async Task<ActionResult<AppointmentCreateDTO>> AddAppointment([FromBody] AppointmentCreateDTO appointment)
         {
-        
-            Task.Run(async () =>
-           {
-               var newAppointment = await _appointments.AddAppointment(appointment);
-               return Ok(newAppointment);
 
-           });
-
-            return null;
+            var app = _appointments.AddAppointment(appointment);
+            //Break Point  databaseSave
+            return Ok(app);
 
         }
 
