@@ -44,7 +44,16 @@ namespace DocService.Repositories.Repos
 
         public Task<AppointmentReadDTO> EditAppointment(AppointmentReadDTO appointment)
         {
-            throw new NotImplementedException();
+            //map 
+            var fromDTOtoModel = _mapper.Map<AppointmentReadDTO, Appointment>(appointment);
+            var UpdateModel = _database.Update(fromDTOtoModel);
+            _database.SaveChanges();
+            //map edited model back to DTO 
+            var updatedModel = _mapper.Map<Appointment, AppointmentReadDTO>(UpdateModel.Entity);
+
+            return Task.FromResult(updatedModel);
+            
+
         }
 
         public async Task<AppointmentReadDTO> GetAppointment(int id)

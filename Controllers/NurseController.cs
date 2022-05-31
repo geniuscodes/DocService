@@ -159,5 +159,31 @@ namespace DocService.Controllers
 
         }
 
+        [HttpPut]
+        [Route("nurse/appointments/edit/{id}")]
+        public  async Task<ActionResult<AppointmentReadDTO>> UpdateAppointment(int id, AppointmentReadDTO appointment)
+        {
+
+            var mappedApp = _mapper.Map<AppointmentReadDTO, Appointment>(appointment);
+            var app = _database.Appointments.FirstOrDefault(x => x.Id == mappedApp.Id);
+            //map
+            if (app.Id == app.Id)
+            {
+                //mapp to DTO
+                var mappedDTO = _mapper.Map<Appointment, AppointmentReadDTO>(app);
+                var results = _appointments.EditAppointment(mappedDTO);
+                // 
+                await  _nurses.SaveDatabase();
+                return Ok(results);
+
+
+ 
+            }
+
+            return BadRequest("Something is Wrong ---- ");
+
+        }
+          
+
     }
 }
