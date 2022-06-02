@@ -15,7 +15,9 @@ namespace DocService.Models.Entities
 
         public static DateTime AppointmentDate { get; set; }
 
-        public string AppointmentTime { get; set; } = AppointmentDate.ToString("hh:mm");
+        public string AppointmentTime { get; set; } 
+
+       
 
 
         public DateTime NextVisitDate { get; set; }

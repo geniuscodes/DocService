@@ -2,7 +2,7 @@
 @using DocService.Models.Data.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-@model IEnumerable<DocService.Models.Entities.Appointment>
+@model IEnumerable<DocService.Models.DTO.AppointmentReadDTO>
 
 
 
@@ -86,10 +86,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <img src="https://www.rhcg.org.uk/media/1207/hospital-education-service.png?width=200&height=200&mode=max"
-                            alt="logo" style="width:200px; height:200px;" />
+                        <img src="https://cdn.dribbble.com/users/2226070/screenshots/5750824/media/872b9833f42e333b8ddcea78eb58ef35.gif"
+                            alt="logo" style="width:500px; height:300px;" />
                     </div>
-                    <h2 class="text-center">Patient-Info
+                    <h2 class="text-center">Patient-Appointment
                     </h2>
                 </div>
 
@@ -98,9 +98,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="pull-right">
-                            <a asp-action="NewPatient" asp-controller="Patient">
-                                <img src="https://icon-library.com/images/patient-icon-png/patient-icon-png-26.jpg"
-                                    width="50" height="50" />
+                            <a asp-action="AddAppointment" asp-controller="Appointments">
+                                <img src="https://th.bing.com/th/id/R.3b2e2d1e18d90d9cfca20df81172f341?rik=jbcOWj%2f3Th0d5g&pid=ImgRaw&r=0"
+                                    width="250" height="100" />
 
                             </a>
 
@@ -116,49 +116,49 @@
                     <thead style="color: green;">
                         <tr style="text-align:center;">
                             <th>
-                                @Html.DisplayNameFor(model => model.Patient.FirsName)
+                               Patient 
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.doctor.FirstName)
+                              Doctor 
                             </th>
                        
                             <th>
-                                @Html.DisplayNameFor(model => model.AppointmentTime)
+                               AppointmentTime
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Advice)
+                               Note
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.NextVisitDate)
+                                NextVisitDate
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.CreatedDate)
+                                CreatedDate
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.PatientType)
+                              @Html.DisplayNameFor(model => model.PatientType)
                             </th>
                         </tr>
                     </thead>
 
                     <tbody style="color:black;">
-                        @foreach (var item in Model)
+                           @foreach (var item in Model)
                         {
-                            <tr>
+                         <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Patient.FirsName)
+                                    @Html.DisplayFor(modelItem => item.PatientName)
                                 </td>
                                 
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.doctor.FirstName)
+                                    @Html.DisplayFor(modelItem => item.DoctorName)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.AppointmentTime)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Advice)
+                                    @Html.DisplayFor(modelItem => item.Notes)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.NextVisitDate)
+                                    @Html.DisplayFor(modelItem => item.AppointmentDate)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.CreatedDate)
@@ -167,16 +167,13 @@
                                     @Html.DisplayFor(modelItem => item.PatientType)
                                 </td>
 
-                              @*  <td>
-                                    @Html.DisplayFor(modelItem => item.DateOfBirth)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Agreement)
-                                </td>
-*@
+                              
+
 
                             </tr>
+                         
                         }
+                           
 
                     </tbody>
 

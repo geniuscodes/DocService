@@ -1,14 +1,31 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using DocService.Models.Data;
+using DocService.Models.DTO;
+using DocService.Models.Entities;
+using DocService.Repositories.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DocService.Controllers
 {
     public class AppointmentsController : Controller
     {
+        private readonly IAppointmentRepository _appointments;
+        private readonly IMapper _mapper;
+        private readonly AppDbContext _database;
+        public AppointmentsController(IAppointmentRepository appointments,
+            IMapper mapper, AppDbContext database)
+        {
+            _appointments = appointments;
+            _mapper = mapper;
+            _database = database;
+         }
         // GET: AppointmentsController
         public ActionResult Index()
         {
-            return View();
+               var all = _appointments.GetAppointments();
+                return View(all);
         }
 
         // GET: AppointmentsController/Details/5
@@ -17,10 +34,35 @@ namespace DocService.Controllers
             return View();
         }
 
+        public IActionResult AddAppointment()
+        {
+
+            ViewData["DoctorId"] = new SelectList(_database.Doctors, "Id", "FirstName");
+            ViewData["PatientId"] = new SelectList(_database.Patients, "Id", "FirsName");
+
+            return View();
+        }
+
+
         // GET: AppointmentsController/Create
         public ActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddAppointment([Bind] AppointmentCreateDTO appointment)
+        {
+
+            await _appointments.AddAppointment(appointment);
+            await _database.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+
+            ViewData["PatientId"] = new SelectList(_database.Patients, "Id", "FirsName", appointment.PatientId);
+            ViewData["DoctorId"] = new SelectList(_database.Doctors, "Id", "FirstName", appointment.DoctorId);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: AppointmentsController/Create

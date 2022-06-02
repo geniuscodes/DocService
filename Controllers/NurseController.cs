@@ -45,6 +45,8 @@ namespace DocService.Controllers
             public IEnumerable<Patient?> Patients { get; set; }
         }
 
+
+        //Nurses -   MVC 
         public async Task<IActionResult> Index()
         {
             // return View(await _context.Doctors.ToListAsync());
@@ -59,22 +61,42 @@ namespace DocService.Controllers
         {
             return View("NewPatient");
         }
-        [HttpPost]
-        public async Task<IActionResult> NewPatient([Bind
-        ("Id,FirsName,LastName,PatientCode,Gender,BloodType,DateOfBirth,Phone,EmailAddress, Address, Agreement")]
-         Patient patiet)
+       
+
+
+        //CLINIC - Appointments  MVC 
+
+
+        public ActionResult<IEnumerable<Appointment>> Appointments()
+
         {
-
-            await _pataients.AddPatient(patiet);
-            _doctors.SaveDatabase();
-            return RedirectToAction(nameof(Index));
-
-            return View(patiet);
+           
+                var allAppointments = _appointments.GetAppointments();
+                return View();
+            
         }
-        //Edit
 
 
-        //////////////////////////////////!!For Tesing Func //////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////////////////////////!!For Tesing Func //// !!API //////////////////////////////
 
         //Index
         [HttpGet]
@@ -129,14 +151,13 @@ namespace DocService.Controllers
         //Manage Apppointments
 
         [HttpGet]
-        [Route("nurse/appointments")]
+        [Route("nurse/appointments/all")]
         public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetAllApointments()
         {
 
-            //var allApp = await _appointments.GetAppointments();
-            //return Ok(allApp);
+            var allApp =  _appointments.GetAppointments();
+            return Ok(allApp);
 
-            return View("Appointments");
 
         }
 
@@ -150,7 +171,7 @@ namespace DocService.Controllers
 
         [HttpPost]
         [Route("nurse/appointments")]
-        public async Task<ActionResult<AppointmentCreateDTO>> AddAppointment([FromBody] AppointmentCreateDTO appointment)
+        public async Task<ActionResult<AppointmentCreateDTO>> NewAppointment([FromBody] AppointmentCreateDTO appointment)
         {
 
             var app = _appointments.AddAppointment(appointment);
@@ -159,31 +180,58 @@ namespace DocService.Controllers
 
         }
 
-        [HttpPut]
-        [Route("nurse/appointments/edit/{id}")]
-        public  async Task<ActionResult<AppointmentReadDTO>> UpdateAppointment(int id, AppointmentReadDTO appointment)
+        [HttpPut("{AppointmentId}")]
+        [ProducesResponseType(200)]
+       
+        public  async Task<ActionResult<AppointmentEditDTO>> UpdateAppointment(int AppointmentId, [FromBody] AppointmentEditDTO appointment)
         {
 
-            var mappedApp = _mapper.Map<AppointmentReadDTO, Appointment>(appointment);
-            var app = _database.Appointments.FirstOrDefault(x => x.Id == mappedApp.Id);
-            //map
-            if (app.Id == app.Id)
+            //map 
+            if(!ModelState.IsValid)
             {
-                //mapp to DTO
-                var mappedDTO = _mapper.Map<Appointment, AppointmentReadDTO>(app);
-                var results = _appointments.EditAppointment(mappedDTO);
-                // 
-                await  _nurses.SaveDatabase();
-                return Ok(results);
+                return BadRequest("Not That nOW ????");
+            }
+          
+            var fromDTOtoModel = _mapper.Map<AppointmentEditDTO, Appointment>(appointment);
+            var IdChecker =  _database.Appointments.FirstOrDefault(x => x.Id == AppointmentId);
+            if (IdChecker != null)
+            {
+
+                IdChecker.PatientId = appointment.PatientId;
+                IdChecker.doctorId = appointment.DoctorId;
+                IdChecker.PatientType = appointment.PatientType;
+                IdChecker.NextVisitDate = appointment.AppointmentDate;
+                IdChecker.AppointmentTime = appointment.AppointmentTime;
+                IdChecker.Advice = appointment.Advice;
+                IdChecker.Comment = appointment.Comment;
+                _database.SaveChanges();
+
+                //map edited model back to DTO 
+                var updatedModel = _mapper.Map<Appointment, AppointmentEditDTO>(IdChecker);
+                return Ok(updatedModel);
+            }
+            else
+            {
+                return NotFound("tHAT oNE is Not FounD ----");
+            }
+        }
 
 
- 
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Appointment>> DeleteAppointment(int id)
+        {
+
+            var FindAppId =  await _database.Appointments.FindAsync(id);
+            if (FindAppId == null)
+            {
+
+                return NotFound($"No Appointment Found--");
+               
             }
 
-            return BadRequest("Something is Wrong ---- ");
-
+             _database.Appointments.Remove(FindAppId);
+            _database.SaveChanges();
+            return Ok("Appointment Deleted");
         }
-          
-
     }
 }

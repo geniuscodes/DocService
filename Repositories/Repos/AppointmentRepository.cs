@@ -25,6 +25,7 @@ namespace DocService.Repositories.Repos
         {
 
             var app = _mapper.Map<AppointmentCreateDTO, Appointment>(appointment);
+            app.AppointmentTime = appointment.AppointmentDate.ToLongTimeString();
             var newAppointment = _database.Appointments.Add(app);
              var newAppoint = _mapper.Map<Appointment, AppointmentCreateDTO>(newAppointment.Entity);
            
@@ -37,19 +38,29 @@ namespace DocService.Repositories.Repos
             throw new NotImplementedException();
         }
 
-        public Task<AppointmentReadDTO> DeleteAppointment(AppointmentReadDTO appoint)
+        public  Task<AppointmentReadDTO> DeleteAppointment(int appointmentId)
         {
-            throw new NotImplementedException();
+            //Check
+            var SearchEntity =  _database.Appointments.FirstOrDefault(x=> x.Id == appointmentId);
+            var FoundDTO = _mapper.Map<Appointment, AppointmentReadDTO>(SearchEntity);
+            if (SearchEntity != null)
+            {
+                _database.Remove(SearchEntity);
+                _database.SaveChanges();
+                return Task.FromResult(FoundDTO);
+            }
+            else
+                return null;
         }
 
-        public Task<AppointmentReadDTO> EditAppointment(AppointmentReadDTO appointment)
+        public Task<AppointmentEditDTO> EditAppointment(AppointmentEditDTO appointment)
         {
             //map 
-            var fromDTOtoModel = _mapper.Map<AppointmentReadDTO, Appointment>(appointment);
+            var fromDTOtoModel = _mapper.Map<AppointmentEditDTO, Appointment>(appointment);
             var UpdateModel = _database.Update(fromDTOtoModel);
             _database.SaveChanges();
             //map edited model back to DTO 
-            var updatedModel = _mapper.Map<Appointment, AppointmentReadDTO>(UpdateModel.Entity);
+            var updatedModel = _mapper.Map<Appointment, AppointmentEditDTO>(UpdateModel.Entity);
 
             return Task.FromResult(updatedModel);
             
@@ -74,10 +85,9 @@ namespace DocService.Repositories.Repos
                            {
                                PatientName = patients.FirsName + " " + patients.LastName,
                                DoctorName = doctors.FirstName,
-                           
                                Notes = appointments.Comment,
                                AppointmentDate = appointments.NextVisitDate,
-                               AppointmentTime = appointments.NextVisitDate.ToString("HH:mm tt"),
+                               AppointmentTime = appointments.AppointmentTime,
                               
                               }).SingleOrDefaultAsync(); 
                              return  appointment.Result;
@@ -85,7 +95,7 @@ namespace DocService.Repositories.Repos
                 
         }
 
-        public async Task<IEnumerable<AppointmentReadDTO>> GetAppointments()
+        public IEnumerable<AppointmentReadDTO> GetAppointments()
         {
             //Tables 
             var Appointments = _database.Appointments;
@@ -100,6 +110,7 @@ namespace DocService.Repositories.Repos
                            {
                                PatientName = patients.FirsName + " " + patients.LastName,
                                DoctorName = doctors.FirstName,
+                               PatientType = appointments.PatientType,
                                Notes = appointments.Comment,
                                AppointmentDate = appointments.NextVisitDate,
                                AppointmentTime = appointments.NextVisitDate.ToString("HH:mm tt"),

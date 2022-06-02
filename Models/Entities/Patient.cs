@@ -34,7 +34,7 @@ namespace DocService.Models.Entities
         public string Address { get; set; }
         public string Agreement { get; set; }
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
-        //Created by 
+      
 
         //The PATIENT CAN BE CREATED by Nurse or Doctor Nurse or Admin 
         
