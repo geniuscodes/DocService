@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QKGkiODfHl59wiLHkbFSVly8DL7KYGw6vlC6XCU9898=",
+  "Hash": "xRALujZn5GQ92tHy/1cVm+PUAbH6nrq9Ve0lbQMv1nA=",
   "Source": "DocService",
   "BasePath": "_content/DocService",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\css\\bttheme.css"
     },
     {
+      "Identity": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\css\\dataTables.bootstrap5.min.css",
+      "SourceId": "DocService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\",
+      "BasePath": "_content/DocService",
+      "RelativePath": "css/dataTables.bootstrap5.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dataTables.bootstrap5.min.css"
+    },
+    {
       "Identity": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\css\\mytheme.css",
       "SourceId": "DocService",
       "SourceType": "Discovered",
@@ -1105,6 +1122,23 @@
       "OriginalItemSpec": "wwwroot\\css\\mytheme.css"
     },
     {
+      "Identity": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\css\\responsive.dataTables.min.css",
+      "SourceId": "DocService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\",
+      "BasePath": "_content/DocService",
+      "RelativePath": "css/responsive.dataTables.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\responsive.dataTables.min.css"
+    },
+    {
       "Identity": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\css\\site.css",
       "SourceId": "DocService",
       "SourceType": "Discovered",
@@ -1120,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\css\\style.css",
+      "SourceId": "DocService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\",
+      "BasePath": "_content/DocService",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\wwwroot\\favicon.ico",

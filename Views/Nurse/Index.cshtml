@@ -38,7 +38,7 @@
             $("#Doc").DataTable({
 
                 "filter": true,
-                "scrollX": true,
+                "scrollX": false,
                 "scrollCollapse": true,
                 "orderMulti": false,
                 "pageLength": 5
@@ -148,6 +148,7 @@
                             <tr>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Id)
+                                   
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.PatientCode)

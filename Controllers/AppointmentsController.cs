@@ -63,10 +63,7 @@ namespace DocService.Controllers
 
 
         // GET: AppointmentsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+       
 
         [HttpPost]
         [ValidateAntiForgeryToken]
