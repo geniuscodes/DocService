@@ -67,7 +67,7 @@ namespace DocService.Repositories.Repos
 
         }
 
-        public async Task<AppointmentReadDTO> GetAppointment(int id)
+        public  AppointmentReadDTO GetAppointment(int id)
         {
 
             //Tables
@@ -76,23 +76,56 @@ namespace DocService.Repositories.Repos
             var Patients = _database.Patients;
             var appointment =
                               (from appointments in Appointments
-                              join doctors in Doctors on
+                               join doctors in Doctors on
                                appointments.doctorId equals (doctors.Id)
-                              join patients in Patients on
+                               join patients in Patients on
                                appointments.PatientId equals (patients.Id)
                                where appointments.Id == id
                               select new AppointmentReadDTO
                            {
+                               Id = appointments.Id,
                                PatientName = patients.FirsName + " " + patients.LastName,
+                               PatientType = appointments.PatientType,
                                DoctorName = doctors.FirstName,
                                Notes = appointments.Comment,
                                AppointmentDate = appointments.NextVisitDate,
                                AppointmentTime = appointments.AppointmentTime,
                               
-                              }).SingleOrDefaultAsync(); 
-                             return  appointment.Result;
+                              }).FirstOrDefault();
+            
+            return appointment;  
+                
  
                 
+        }
+
+
+        public AppointmentReadDTO GetAppointmentByPatientName(string  PatName)
+        {
+
+            //Tables
+            var Appointments = _database.Appointments;
+            var Doctors = _database.Doctors;
+            var Patients = _database.Patients;
+            var appointment =
+                              (from appointments in Appointments
+                               join doctors in Doctors on
+                                appointments.doctorId equals (doctors.Id)
+                               join patients in Patients on
+                                appointments.PatientId equals (patients.Id)
+                               where appointments.Patient.FirsName == PatName
+                               select new AppointmentReadDTO
+                               {
+                                   PatientName = patients.FirsName + " " + patients.LastName,
+                                   DoctorName = doctors.FirstName,
+                                   Notes = appointments.Comment,
+                                   AppointmentDate = appointments.NextVisitDate,
+                                   AppointmentTime = appointments.AppointmentTime,
+
+                               }).FirstOrDefault();
+            return appointment;
+
+
         }
 
         public IEnumerable<AppointmentReadDTO> GetAppointments()
@@ -108,6 +141,7 @@ namespace DocService.Repositories.Repos
                            appointments.PatientId equals (patients.Id)
                            select new AppointmentReadDTO
                            {
+                               Id = appointments.Id,
                                PatientName = patients.FirsName + " " + patients.LastName,
                                DoctorName = doctors.FirstName,
                                PatientType = appointments.PatientType,

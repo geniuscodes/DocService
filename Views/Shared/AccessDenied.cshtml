@@ -1,26 +1,63 @@
-﻿@page
-@model DocService.Areas.Identity.Pages.Account.AccessDeniedModel
+﻿<html>
+
+  <head>
+    
+<style type="text/css">
+  *{
+    transition: all 0.6s;
+}
+
+html {
+    height: 100%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #888;
+    margin: 0;
+}
+@keyframes mymove {
+  0%   {top: 0px;}
+  25%  {top: 200px;}
+  50%  {top: 100px;}
+  75%  {top: 200px;}
+  100% {top: 0px;}
+}
+
+#main{
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.fof{
+	  display: table-cell;
+	  vertical-align: middle;
+}
+
+.fof h1{
+	  font-size: 50px;
+	  display: inline-block;
+	  padding-right: 12px;
+	  animation: type .5s alternate infinite;
+}
 
 
-<header>
-</header>
-@* Big Red Text  *@
-<h1>Access Denied</h1>
-<p>You do not have permission to access this page.</p>  
-<p>Please contact your system administrator if you believe you should have access to this page.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-@* Back to the Index page Button Blue with Button Hover *@ 
 
+  </style>
+  
+  </head>
+  <body>
+<div id="main">
+    	<div class="fof">
+        		<h1>Error 404</h1>
+                <p>If it was us we would have fixed it but this time it was you !! </p>
+                <div>
+    <a class="btn btn-primary" asp-action="Index">Take Me Home</a>
+</div>
+    	</div>
 
-<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back</a>
-<footer>
-    @* Carers Page and Our Company Page Button Blue with Button Hover **@
-   
-</footer>
-
-
-
-
-
+</div>
+  </body>
+  </html>

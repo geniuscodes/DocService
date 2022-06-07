@@ -162,11 +162,18 @@ namespace DocService.Controllers
         }
 
         [HttpGet]
+        [Route("appointments/{PatName}")]
+        public async Task<ActionResult<AppointmentReadDTO>> GetAppoinmentByPatientName(string PatName)
+        {
+            var appointment = _appointments.GetAppointmentByPatientName(PatName);
+            return Ok(appointment);
+        }
+        [HttpGet]
         [Route("nurse/appointments/{id}")]
         public async Task<ActionResult<AppointmentReadDTO>> GetAppointmentById(int id)
         {
-            var app = await _appointments.GetAppointment(id);
-            return Ok((app));
+            var appointment = _appointments.GetAppointment(id);
+            return Ok(appointment);
         }
 
         [HttpPost]
@@ -233,5 +240,7 @@ namespace DocService.Controllers
             _database.SaveChanges();
             return Ok("Appointment Deleted");
         }
+
+        
     }
 }

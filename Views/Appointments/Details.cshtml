@@ -1,0 +1,59 @@
+﻿@model DocService.Models.DTO.AppointmentReadDTO
+
+
+
+<div>
+    <h4 style="margin-left:90px ">Appointment for  <strong style="color:darkgrey; ">@Html.DisplayFor(model => model.PatientName)</strong>  </h4>
+    <hr />
+
+     <div class="col-md-12">
+                    <div class="text-center">
+                        <img src="https://img.freepik.com/free-vector/online-doctor-concept-consultation-diagnosis-black-woman-doctor-laptop-screen-flat-style-illustration-isolated_285336-1773.jpg?w=2000"
+                            alt="logo" style="width:400px; height:220px;" />
+                    </div>
+    <dl style="margin-left:90px"  class="row" >
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppointmentDate.DayOfWeek)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AppointmentDate.DayOfWeek)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppointmentTime)
+        </dt> 
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AppointmentTime)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientType)
+        </dt> 
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PatientType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="UpdateAppointment" asp-controller="Appointments" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

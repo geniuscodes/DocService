@@ -14,6 +14,7 @@ namespace DocService.Controllers
 
     //Authorize for Doctors, Managemement
     [Authorize(Roles = StaticRoles.Doctor + "," + StaticRoles.Management)]
+    [AllowAnonymous]
     public class DoctorController : Controller
     {
         private readonly Models.Data.AppDbContext _context;
@@ -30,19 +31,24 @@ namespace DocService.Controllers
         }
 
         // [Authorize(Roles = StaticRoles.Doctor + "," + StaticRoles.Management)]
-        public  async Task<ActionResult> Index()
+        [AllowAnonymous]
+        public async Task<ActionResult> Index()
         {
 
-            if (User.Identity.IsAuthenticated && User.IsInRole(StaticRoles.Doctor) ||
-            User.Identity.IsAuthenticated &&
-            User.IsInRole(StaticRoles.Management))
-         
-            {
-                var docs = _doctors.GetDoctors();
+            //if (User.Identity.IsAuthenticated && User.IsInRole(StaticRoles.Doctor) ||
+            //User.Identity.IsAuthenticated &&
+            //User.IsInRole(StaticRoles.Management) || 
+            //User.Identity.IsAuthenticated && User.IsInRole(StaticRoles.Nurse))
+
+            var docs = _doctors.GetDoctors();
+            if (docs != null)
+            { 
+              
                 return View(docs);
             }
+            
 
-            return View("AccessDenied");
+              return View("AccessDenied");
 
 
 
@@ -71,6 +77,7 @@ namespace DocService.Controllers
 
         // GET: Doctor/Edit/5
 
+        [AllowAnonymous]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)

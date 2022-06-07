@@ -12,7 +12,7 @@ namespace DocService.Repositories.Interfaces
         IEnumerable<AppointmentReadDTO> GetAppointments();
 
         //Display Appointment
-        Task<AppointmentReadDTO> GetAppointment(int id);
+        AppointmentReadDTO GetAppointment(int id);
 
         //Search Appointments
 
@@ -29,6 +29,10 @@ namespace DocService.Repositories.Interfaces
 
         Task<AppointmentReadDTO> AppointmentDetails(int id);
 
-        
+        //
+       AppointmentReadDTO GetAppointmentByPatientName(string PatName);
+
+
+
     }
 }

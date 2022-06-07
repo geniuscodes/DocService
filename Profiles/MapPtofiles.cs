@@ -13,6 +13,7 @@ namespace DocService.Profiles
            
              CreateMap<Appointment, AppointmentReadDTO>()
             .ForMember(dest => dest.PatientName, opt => opt.MapFrom(src => src.Patient.FirsName))
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Patient.Id))
             .ForMember(dest => dest.DoctorName, opt => opt.MapFrom(src => src.doctor.FirstName))
             .ForMember(dest => dest.PatientType, op => op.MapFrom(src => src.PatientType))
             .ForMember(dest => dest.Notes, opt => opt.MapFrom(src => src.Comment))

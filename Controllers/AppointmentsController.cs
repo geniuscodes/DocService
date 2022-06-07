@@ -21,17 +21,35 @@ namespace DocService.Controllers
             _mapper = mapper;
             _database = database;
          }
-        // GET: AppointmentsController
-        public ActionResult Index()
+
+        public class PatientViewModel
         {
-               var all = _appointments.GetAppointments();
-                return View(all);
+            public AppointmentReadDTO AppointmentReadDTO { get; set; }
+            public IEnumerable<AppointmentReadDTO?> Appointments { get; set; }
         }
 
-        // GET: AppointmentsController/Details/5
-        public ActionResult Details(int id)
+
+        //Nurses -   MVC 
+        public async Task<IActionResult> Index()
         {
-            return View();
+            // return View(await _context.Doctors.ToListAsync());
+            PatientViewModel pvm = new PatientViewModel();
+            pvm.AppointmentReadDTO = new AppointmentReadDTO();
+            pvm.Appointments = _appointments.GetAppointments();
+
+           
+            return View(pvm);
+        }
+        // GET: AppointmentsController
+     
+
+        // GET: AppointmentsController/Details/5
+
+        public ActionResult Details(int Id)
+        {
+
+            var appointment = _appointments.GetAppointment(Id);
+            return View(appointment);
         }
 
         public IActionResult AddAppointment()
@@ -81,9 +99,25 @@ namespace DocService.Controllers
         }
 
         // GET: AppointmentsController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult UpdateAppointment(int? id)
         {
-            return View();
+
+            //
+            if (id == null) return NotFound();
+
+            var app = _database.Appointments.FirstOrDefault(x => x.Id == id);
+            //if found
+            if(app != null)
+            {
+                ViewData["PatientId"] = new SelectList(_database.Patients, "Id", "FirsName", app.PatientId);
+                ViewData["doctorId"] = new SelectList(_database.Doctors, "Id", "FirstName", app.doctorId);
+                var re = _mapper.Map<Appointment, AppointmentReadDTO>(app);
+                return View(re);
+            }
+
+            return RedirectToAction(nameof(Index));
+                   
+     
         }
 
         // POST: AppointmentsController/Edit/5
