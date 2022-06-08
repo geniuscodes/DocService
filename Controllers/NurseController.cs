@@ -107,6 +107,25 @@ namespace DocService.Controllers
             return Ok(nurses);
         }
 
+        [HttpGet]
+        [Route("Home/Patientspd")]
+        public ActionResult Ppd()
+        {
+            var appointments = _database.Appointments.ToList();
+            var docs = _database.Doctors.ToList();
+            var pl = from r in appointments
+                     join d in docs
+                     on r.doctorId equals d.Id
+                     orderby d.FirstName
+                     group r by d.FirstName into grp
+                     select new { Doctor = grp.Key, Patients = grp.Count() };
+
+            //average
+            var ave = pl.Average(x => x.Patients);
+
+            return Ok(pl);
+
+        }
         //Details
         [HttpGet]
         [Route("nurse/{id}")]

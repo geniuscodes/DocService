@@ -40,7 +40,7 @@ public IActionResult NewPatient()
             _pataients.SaveDatabase();  
             return View("NewPatient");
         }
-     
+      
 
     [HttpPost]
     [ValidateAntiForgeryToken]

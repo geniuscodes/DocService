@@ -7,13 +7,18 @@ SELECT TOP (1000) [Id]
       ,[Comment]
       ,[doctorId]
       ,[PatientId]
-      ,[CreatedDate]
+      ,[CreatedDate],
+	  COALESCE(Advice,' ') Advice
 	  
 FROM  [PrescriptionsDB].[dbo].[Appointments]
-WHERE AppointmentTime  BETWEEN  '08:00' and '08:30'
+WHERE AppointmentTime  BETWEEN  '09:00' and '10:30'
 	  AND 
 	 CreatedDate IN ('2022-06-02', '2022-02-10'); 
 	
 
------
+-----JOIN Procedure -
 
+
+
+
+--FUction to For filtering 
