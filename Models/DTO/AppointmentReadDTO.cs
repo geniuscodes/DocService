@@ -9,6 +9,7 @@ namespace DocService.Models.DTO
         public string PatientName { get; set; }
         public string DoctorName { get; set; }
         public string PatientType { get; set; }
+        public int TotalCountDocs { get; set; }
       
         public string AppointmentTime { get; set; }
         public string Notes { get; set; }

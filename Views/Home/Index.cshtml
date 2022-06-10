@@ -1,6 +1,7 @@
 ﻿
 @using DocService.Models.Entities
-@model IEnumerable<DocService.Models.Entities.Patient>
+@using DocService.Repositories.Repos
+@model DocService.Controllers.HomeController.PatientViewModel
 
 
 <!doctype html>
@@ -136,7 +137,7 @@ body {
 
                                            
                                                 <h6 class="mt-3 mb-0 fw-bold small-14">Total Doctors</h6>
-                                                <span class="text-muted">00</span>
+                                                <span class="text-muted">@Html.DisplayFor(m=> m.docs)</span>
                          
  
                         </div>
@@ -149,7 +150,7 @@ body {
 
                                            
                                                 <h6 class="mt-3 mb-0 fw-bold small-14">Total Patients</h6>
-                                                <span class="text-muted">00</span>
+                                                <span class="text-muted">@Html.DisplayFor(m=> m.patients)</span>
 
                         </div>
                       </div>
@@ -161,7 +162,7 @@ body {
 
                                            
                                                 <h6 class="mt-3 mb-0 fw-bold small-14">Total Medicine</h6>
-                                                <span class="text-muted">00</span>
+                                                <span class="text-muted">@Html.DisplayFor(m=> m.medicine)</span>
                         </div>
                       </div>
   
@@ -172,7 +173,7 @@ body {
 
                                            
                                                 <h6 class="mt-3 mb-0 fw-bold small-14">Patients per Doctor</h6>
-                                                <span class="text-muted">00</span>
+                                                <span class="text-muted">@Html.DisplayFor(m=> m.avergagePatients)</span>
                         </div>
                       </div>
                       <div class="column">
@@ -182,7 +183,7 @@ body {
 
                                            
                                                 <h6 class="mt-3 mb-0 fw-bold small-14">Total Nurses</h6>
-                                                <span class="text-muted">00</span>
+                                                <span class="text-muted">@Html.DisplayFor(m=> m.nurses)</span>
                         </div>
                       </div><div class="column">
                         <div class="card" style="width:370px; height:250px">
@@ -191,7 +192,7 @@ body {
 
                                            
                                                 <h6 class="mt-3 mb-0 fw-bold small-14">Total Appointments</h6>
-                                                <span class="text-muted">00</span>
+                                                <span class="text-muted">@Html.DisplayFor(m=> m.appointments)</span>
                         </div>
                       </div>
                     </div>
@@ -209,21 +210,21 @@ body {
                             <thead style="color: black;">
                              <tr role="row" style="text-align:center;" >
                             <th class="sorting_asc" tabindex="0" aria-controls="myDataTable" rowspan="1" colspan="1" style="width: 102.2px;" aria-sort="ascending" aria-label="Patients: activate to sort column descending">
-                                @Html.DisplayNameFor(model => model.Id)
+                                Patient Id
                             </th>
                              <th class="sorting" tabindex="0" aria-controls="Doc" rowspan="1" colspan="1" style="width: 301.2px;" aria-label="PatientCode: activate to sort column ascending">
-                                @Html.DisplayNameFor(model => model.PatientCode)
+                                PatientCode
                             </th>
                             <th class="sorting" tabindex="0" aria-controls="Doc" rowspan="1" colspan="1" style="width: 81.2px;" aria-label="Progress: activate to sort column ascending">
-                                @Html.DisplayNameFor(model => model.FirsName)
+                              FirstName
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.LastName)
+                              LastName
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Gender)
+                               Gender
                             </th><th>
-                                @Html.DisplayNameFor(model => model.Phone)
+                               Phone
                             </th>
                             <th>
                                CheckUp
@@ -233,7 +234,7 @@ body {
                     </thead>
 
                     <tbody style="color:black;">
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Patients)
                         {
                             <tr role="row">
                                 <td>

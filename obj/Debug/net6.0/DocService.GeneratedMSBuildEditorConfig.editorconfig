@@ -8,345 +8,349 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DocService
 build_property.RootNamespace = DocService
-build_property.ProjectDir = C:\Users\nduduzok\Documents\Development\DocService\
+build_property.ProjectDir = c:\Users\nduduzok\Documents\Development\DocService\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\nduduzok\Documents\Development\DocService
+build_property.MSBuildProjectDirectory = c:\Users\nduduzok\Documents\Development\DocService
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ExternalLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Lockout.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Login.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/LoginWith2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGgyZmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbldpdGhSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Logout.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW5hYmxlQXV0aGVudGljYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRXh0ZXJuYWxMb2dpbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcR2VuZXJhdGVSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUmVzZXRBdXRoZW50aWNhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2hvd1JlY292ZXJ5Q29kZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcVHdvRmFjdG9yQXV0aGVudGljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Register.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Error.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/_ViewImports.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/_ViewStart.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/AddAppointment.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/AddAppointment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEFkZEFwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/Details.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/Index.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/UpdateAppointment.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Appointments/UpdateAppointment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXFVwZGF0ZUFwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Create.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Delete.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Details.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Edit.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Index.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Doctor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Home/Index.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Home/Privacy.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Home/_Index.Content.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Home/_Index.Content.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSW5kZXguQ29udGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Home/_Index.Header.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Home/_Index.Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfSW5kZXguSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Nurse/Appointments.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Nurse/Appointments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VcQXBwb2ludG1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Nurse/Index.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Nurse/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Patient/NewPatient.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Patient/NewPatient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxOZXdQYXRpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Create.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Delete.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Details.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Edit.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Index.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Prescriptions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaXB0aW9uc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/AccessDenied.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFjY2Vzc0RlbmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/ControlSidebar/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/ControlSidebar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29udHJvbFNpZGViYXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/FooterLeft/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/FooterLeft/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyTGVmdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/FooterRight/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/FooterRight/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyUmlnaHRcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/Footer/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/Footer/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderLeft/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderLeft/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyTGVmdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderMessagesMenu/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderMessagesMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyTWVzc2FnZXNNZW51XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderNotificationsMenu/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderNotificationsMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyTm90aWZpY2F0aW9uc01lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderRight/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderRight/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyUmlnaHRcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderSearchForm/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/HeaderSearchForm/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyU2VhcmNoRm9ybVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/Header/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/Header/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/SidebarBrand/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/SidebarBrand/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZWJhckJyYW5kXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/SidebarMenu/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/SidebarMenu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZWJhck1lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/SidebarUserPanel/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/SidebarUserPanel/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZWJhclVzZXJQYW5lbFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/Sidebar/Default.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Components/Sidebar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZWJhclxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Error.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Layout/_Layout.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Layout/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Layout/_Scripts.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Layout/_Scripts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFxfU2NyaXB0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Layout/_Styles.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/Layout/_Styles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFxfU3R5bGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/_LoginPartial.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/_ViewImports.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/_ViewStart.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nduduzok/Documents/Development/DocService/Views/Shared/_Layout.cshtml]
+[c:/Users/nduduzok/Documents/Development/DocService/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-b6w9l4ep7f

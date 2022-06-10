@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace AdminLte.Mvc.Views.Shared.Components.FooterRight
+namespace DocService.Views.Shared.Components.FooterRight
 {
     public class FooterRightViewComponent : ViewComponent
     {

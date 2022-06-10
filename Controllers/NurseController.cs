@@ -107,24 +107,94 @@ namespace DocService.Controllers
             return Ok(nurses);
         }
 
+        //Getting Patients Per Doctor This will return a Grouped List
         [HttpGet]
         [Route("Home/Patientspd")]
         public ActionResult Ppd()
         {
-            var appointments = _database.Appointments.ToList();
+            List<Appointment>? appointments = _database.Appointments.ToList();
             var docs = _database.Doctors.ToList();
-            var pl = from r in appointments
+            var PatientsPerDoctor = from r in appointments
                      join d in docs
                      on r.doctorId equals d.Id
                      orderby d.FirstName
                      group r by d.FirstName into grp
                      select new { Doctor = grp.Key, Patients = grp.Count() };
 
-            //average
-            var ave = pl.Average(x => x.Patients);
+        
+         
 
-            return Ok(pl);
+            return Ok(PatientsPerDoctor);
 
+        }
+
+        //Get the Number OF Patients Per Doctor on Average
+        //Edit the Method for doctor to see their patients can filter by Date
+        //Get Appointmets of a Doctor by Specifiying the Id on Param
+        //Get Appointmets of a Doctor by Specifiying the Id on Param
+        [HttpGet]
+        [Route("Home/GetAveragePatientsPerDoctor")]
+        
+        public ActionResult GetAveragePatientsPerDoctor()
+        {
+            //DataSources
+            var appointments = _database.Appointments.ToList();
+            var doctors = _database.Doctors.ToList() ;
+            //First Group the Results
+            var results = from a in appointments
+                          join d in doctors
+                          on a.doctorId equals d.Id
+                          //Filter By Date ?
+                          //where DateCreated BETWEEN ( day1, day 2)
+                          //Where DateCreated IN (day1, day2 )  // From User Param
+                          orderby d.FirstName
+                          group a by d.FirstName into grp
+                          select new { Doc = grp.Key, Patients = grp.Count() };
+
+
+
+            //avreage 
+            var AverageResult = results.Average(x => x.Patients);
+            //toInt
+            var AvavargeIntReslults = (int)AverageResult;
+
+            return Ok($"On Average the Doc has {AvavargeIntReslults}  Patients");
+
+        }
+
+        //Total Doctors
+        [HttpGet]
+        [Route("Home/TotalDoctors")]
+        public ActionResult TotalDocs()
+        {
+            //data sources
+            var rslt = _appointments.totalCount("Doctors");
+   
+            return Ok($"We Currently have {rslt} Professional Doctors in Our Hospital");
+
+        }
+
+        //Total Patients
+        [HttpGet]
+        [Route("Home/TotalPatients")]
+        public ActionResult TotalPatients()
+        {
+            var patients = _database.Patients.ToList();
+            int toatl = patients.Count();
+            return Ok($"We Currently have {toatl} Patients  in Our Hospital");
+        }
+
+        //Totals
+        [HttpGet]
+        [Route("Home/TotalAppointments",Name = "TotalAppointments")]
+        public ActionResult TotalAppointments ()
+        {
+            //
+            var appointments = _database.Appointments.ToDictionary(x => x.Id, u=> u.Patient);
+            //
+            int appo = appointments.Count();
+            //
+            return Ok($"We Have Manged {appo} Appointments and Counting ! ");
         }
         //Details
         [HttpGet]

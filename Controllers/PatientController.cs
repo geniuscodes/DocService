@@ -37,7 +37,7 @@ public IActionResult NewPatient()
         {
 
 
-            _pataients.SaveDatabase();  
+            _pataients.SaveDatabase();
             return View("NewPatient");
         }
       

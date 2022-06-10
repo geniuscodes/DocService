@@ -47,27 +47,24 @@ namespace DocService.Controllers
 
         public ActionResult Details(int Id)
         {
-
+         
             var appointment = _appointments.GetAppointment(Id);
             return View(appointment);
         }
 
-        public IActionResult AddAppointment()
+       
+        public IActionResult Create()
         {
 
-            ViewData["DoctorId"] = new SelectList(_database.Doctors, "Id", "FirstName");
-            ViewData["PatientId"] = new SelectList(_database.Patients, "Id", "FirsName");
-
+        
             return View();
         }
 
-
-        // GET: AppointmentsController/Create
        
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddAppointment([Bind] AppointmentCreateDTO appointment)
+        public async Task<IActionResult> Create([Bind] AppointmentCreateDTO appointment)
         {
 
             await _appointments.AddAppointment(appointment);
@@ -80,20 +77,7 @@ namespace DocService.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // POST: AppointmentsController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+   
 
         // GET: AppointmentsController/Edit/5
         public ActionResult UpdateAppointment(int? id)

@@ -32,6 +32,9 @@ namespace DocService.Repositories.Interfaces
         //
        AppointmentReadDTO GetAppointmentByPatientName(string PatName);
 
+        //
+        public int totalCount(string filter);
+
 
 
     }

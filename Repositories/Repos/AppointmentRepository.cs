@@ -134,6 +134,9 @@ namespace DocService.Repositories.Repos
             var Appointments = _database.Appointments;
             var Doctors = _database.Doctors;
             var Patients = _database.Patients;
+          
+
+
             var results = (from appointments in Appointments
                            join doctors in Doctors on
                            appointments.doctorId equals (doctors.Id)
@@ -155,7 +158,76 @@ namespace DocService.Repositories.Repos
 
         }
 
+        //TotalDocs
+        public int totalCount(string filter)
+        {
+            //
+           
+            //DataSources
+            var docs = _database.Doctors.ToList();
+            var nurse = _database.Nurses.ToList();
+            var medicines = _database.Prescriptions.ToList();
+            AppointmentReadDTO ard = new AppointmentReadDTO();
+            int Total = 0;
+            var patients = _database.Patients.ToList();
+            var appointnents = _database.Appointments.ToList();
+            
+            //Counts
+            switch(filter)
+            {
+                case "Doctors":
+                    Total = docs.Count();
+                    ard.TotalCountDocs = Total;
+                    return ard.TotalCountDocs;
+                    
+                case "Patients":
+                    Total = patients.Count();
+                    ard.TotalCountDocs = Total;
+                    return ard.TotalCountDocs;
 
+                case "Appointments":
+                    Total = appointnents.Count();
+                    ard.TotalCountDocs = Total;
+                    return ard.TotalCountDocs;
+
+                case "AveragePatients":
+
+                    var results = from a in appointnents
+                                  join d in docs
+                                  on a.doctorId equals d.Id
+                                  //Filter By Date ?
+                                  //where DateCreated BETWEEN ( day1, day 2)
+                                  //Where DateCreated IN (day1, day2 )  // From User Param
+                                  orderby d.FirstName
+                                  group a by d.FirstName into grp
+                                  select new { Doc = grp.Key, Patients = grp.Count() };
+                                  //avreage 
+                                   var AverageResult = results.Average(x => x.Patients);
+                                   //toInt
+                                   var AvavargeIntReslults = (int)AverageResult;
+                    ard.TotalCountDocs = AvavargeIntReslults;
+                    return ard.TotalCountDocs;
+
+                case "Nurses":
+                    Total = nurse.Count();
+                    ard.TotalCountDocs = Total;
+                    return ard.TotalCountDocs;
+
+                case "Medicines":
+                    Total = medicines.Count();
+                    ard.TotalCountDocs = Total;
+                    return ard.TotalCountDocs;
+                
+
+               default:
+               return 0;
+
+
+            }
+         
+
+            
+        }
         public IEnumerable<Appointment> SearchAppointments(string appointment)
         {
             throw new NotImplementedException();

@@ -30,7 +30,9 @@ namespace DocService.Models.Entities
 
         //Relational Tables
         public Doctor doctor { get; set; }
-        public int doctorId { get; set; }
+        public int doctorId { get; set; }  
+        [NotMapped]
+        public int TotalDocs { get; set; }
 
         public Patient Patient { get; set; }
         public int PatientId { get; set; }

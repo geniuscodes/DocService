@@ -5,7 +5,7 @@ COUNT(*) AS 'Patients'
 FROM PrescriptionsDB.[dbo].Appointments A
 Join PrescriptionsDB.[dbo].Doctors docs
 ON  A.doctorId = docs.Id
-WHERE doctorId IS NOT NULL
+WHERE doctorId = 3004
 GROUP BY docs.FirstName, docs.LastName 
 
 ---All Doctors ----
@@ -56,3 +56,6 @@ FROM  [PrescriptionsDB].[dbo].[Appointments] a
 ORDER BY 
     Id 
     
+SELECT 
+*
+FROM Doctors
