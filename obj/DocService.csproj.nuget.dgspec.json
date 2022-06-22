@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj": {}
+    "c:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj": {
+    "c:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj",
+        "projectUniqueName": "c:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj",
         "projectName": "DocService",
-        "projectPath": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj",
+        "projectPath": "c:\\Users\\nduduzok\\Documents\\Development\\DocService\\DocService.csproj",
         "packagesPath": "C:\\Users\\nduduzok\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nduduzok\\Documents\\Development\\DocService\\obj\\",
+        "outputPath": "c:\\Users\\nduduzok\\Documents\\Development\\DocService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
